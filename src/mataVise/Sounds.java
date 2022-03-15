@@ -1,12 +1,12 @@
-//Clase que contiene los métodos que reproducen sonidos.
+//Clase que contiene los métdos que reproucen sonidos.
 package mataVise;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
-//BACKGROUND MUSIC
-//Clase que hace sonar el SoundTrack del juego.
+//BACKGOUND MUSIC
+//Clase que controla la reproducción de la banda sonora.
 class Bgm extends Thread {
    @Override
    public void run()
@@ -17,7 +17,7 @@ class Bgm extends Thread {
          {
             Player apl = new Player(new FileInputStream("sounds/SoundTrack.mp3"));
             apl.play();
-            Thread.sleep(1000);
+            Thread.sleep(0);
          }
       }
       catch(FileNotFoundException e)
@@ -35,11 +35,12 @@ class Bgm extends Thread {
    }
 }
 
-//COINSOUND
-//Clase que hace sonar el sonido de la moneda de Mario Bros.
+//COIN SOUND
+//Clase que controla la reproducción del sonido de moneda.
 class CoinSound extends Thread {
    @Override
-   public void run() {
+   public void run()
+   {
       try
       {
          Player apl = new Player(new FileInputStream("sounds/coin.mp3"));
