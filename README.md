@@ -17,6 +17,5 @@ MataVise es un programa basado en Java desarrollado por Kriseren, Vise y Esco pa
 
 --INSTALACIÓN--
 Para correr este programa solo necesitas ejecutar el siguiente comando en la línea de comandos.
-Compilar: 
 Compilar --> javac -d bin/ -cp jar/jlayer-1.0.1.jar src/mataVise/*.java
 Ejecutar --> clear && java -cp jar/jlayer-1.0.1.jar:bin/ mataVise.mataVise
