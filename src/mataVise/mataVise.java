@@ -140,6 +140,8 @@ class Utilidades
                 //Reproduce sonido de coin
                 CoinSound c = new CoinSound();
                 c.start();
+
+                //Inicia el easter egg
                 egg.start();
                 break;
             }
