@@ -17,13 +17,9 @@ public class mataVise
         Utilidades.AreYouSure();
 
         //Reproducción de la banda sonora.
-        if(args.length>0)
-        {
             Bgm m = new Bgm();
             m.start(); 
-        }
-         
-
+        
         //Llamada al menú.
         Utilidades.menu();
     }
