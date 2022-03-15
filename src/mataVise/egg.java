@@ -21,7 +21,7 @@ class egg
 		System.out.println("- Nombre: Javier.                                        |               |  -");
 		System.out.println("- Apellidos: Vicedo (Segundo Apellido Desconocido).      |               |  -");
 		System.out.println("- Sexo: Poco.                                            |               |  -");
-		System.out.println("- Habilidades especiales:                                |   Fotografía  |  -");
+		System.out.println("- Habilidades especiales: Ninguna.                       |   Fotografía  |  -");
 		System.out.println("- Estado Civil: Más solo que la una.                     | No Disponible |  -");
 		System.out.println("-                                                        |_______________|  -");
 		System.out.println("- *BIOGRAFÍA*                                                               -");
@@ -34,11 +34,12 @@ class egg
 		System.out.println("-                                                                           -");
 		System.out.println("- *CRÍMENES COMETIDOS*                                                      -");
 		System.out.println("-  1-. Asesinó a Maradona.                                                  -");
-		System.out.println("-  2-. Se hizo una paja en el funeral de su abuela.                         -");
-		System.out.println("-  3-. Es fan de la pizza con piña                                          -");
-		System.out.println("-  4-.                                                                      -");
-		System.out.println("-  5-.                                                                      -");
+		System.out.println("-  2-. Se hizo una paja en el funeral d su abuela.                          -");
+		System.out.println("-  3-. Es fan de la pizza con piña.                                         -");
+		System.out.println("-  4-. Crimenes de guerra variados.                                         -");
+		System.out.println("-  5-. Violó a la cabra del rey de Groenlandia.                             -");
 		System.out.println("- (Para ver la lista completa de crímenes, introducir el código 7524324)    -");
+		System.out.println("- (Para escuchar las ultimas palabras de Vise, introducir el código 8534096)-");
 		System.out.println("-----------------------------------------------------------------------------");
 
 	}
@@ -67,14 +68,15 @@ class egg
     //Método que lee líneas del fichero de muertes CrimenVise.txt.
     public static String selector(int el)
     {
-        try {
+        try
+        {
             FileReader file = new FileReader(".CrimenVise.txt");
             BufferedReader lect = new BufferedReader(file);
             String causa="";
             for (int i=0; i<el; i++)
                 causa = lect.readLine();
             return causa;
-        } catch(IOException e) {
+        }catch(IOException e){
             return "Salida de Error.";
         }
     }

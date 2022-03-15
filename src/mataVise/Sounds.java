@@ -7,7 +7,8 @@ import javazoom.jl.player.Player;
 
 //BACKGOUND MUSIC
 //Clase que controla la reproducción de la banda sonora.
-class Bgm extends Thread {
+class Bgm extends Thread
+{
    @Override
    public void run()
    {
@@ -37,7 +38,30 @@ class Bgm extends Thread {
 
 //COIN SOUND
 //Clase que controla la reproducción del sonido de moneda.
-class CoinSound extends Thread {
+class CoinSound extends Thread
+{
+   @Override
+   public void run()
+   {
+      try
+      {
+         Player apl = new Player(new FileInputStream("sounds/coin.mp3"));
+         apl.play();
+      }
+      catch(FileNotFoundException e)
+      {
+         System.out.println("Bug");
+      }
+      catch(JavaLayerException e)
+      {
+         System.out.println("Bug");
+      }
+   }
+}
+
+//Clase que controla la reproducción de las últimas palabras de Vise antes de morir.
+class Testimonio extends Thread
+{
    @Override
    public void run()
    {

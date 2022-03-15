@@ -17,8 +17,12 @@ public class mataVise
         Utilidades.AreYouSure();
 
         //Reproducción de la banda sonora.
-        Bgm m = new Bgm();
-        m.start();  
+        if(args.length>0)
+        {
+            Bgm m = new Bgm();
+            m.start(); 
+        }
+         
 
         //Llamada al menú.
         Utilidades.menu();
@@ -122,6 +126,7 @@ class Utilidades
     //Método que lee líneas introducidas por el usuario para mostrar muertes de Vise.
     public static void usuario() throws FileNotFoundException,JavaLayerException
     {
+        int i=0;
         while(true)
         {
             System.out.print("\nElige un numero del 1 al 1000, para volver al menú pulsa 0 --> ");
@@ -146,15 +151,37 @@ class Utilidades
                 break;
             }
 
-            //Si el número introducid es el código muestra la lista de crímenes del EasterEgg.
+            //Si el número introducido es el código de crímenes muestra la lista de crímenes del EasterEgg.
             if(eleccionMuerte==7524324)
             {
                 egg.list();
                 break;
             }
+
+            //Si el número introducido es el código de últimas palabras reproduce el audio del testimonio de Vise.
+            if(eleccionMuerte==8534096)
+            {
+                System.out.println("\nAntes de morir, el delegado Vise grabó una pequeña nota de voz. Estas son sus últimas palabras...");
+
+                //Reproduce el testimonio
+                Testimonio t = new Testimonio();
+                t.start();
+                break;
+            }
             System.out.println();
             System.out.println(selector(eleccionMuerte));
-             
+            i++;
+
+            //Si el contador de muertes seguidas es mayor a 25, se ejecuta lo siguiente. 
+            if(i==10)
+                System.out.println("\nPor favor, deja a Vise morir en paz.");
+            if(i==25)
+                System.out.println("\nEnserio, deja de matarle o su fantasma te perseguirá toda la vida.");
+            if(i==72)
+            {
+                System.out.println("\n!Has entrado al mozo Pacifista!\nDebido a que has matado a Vise más de 72 veces seguidas, esta vez Vise vivirá.");
+                break;
+            }
         }  
     }
 
