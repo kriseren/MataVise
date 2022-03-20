@@ -15,11 +15,12 @@ public class mataVise
         Utilidades.bannerInicio();
         System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
         Utilidades.AreYouSure();
+        Utilidades.cls();
 
         //Reproducción de la banda sonora.
-            Bgm m = new Bgm();
-            m.start(); 
-        
+        Bgm m = new Bgm();
+        m.start();
+
         //Llamada al menú.
         Utilidades.menu();
     }
@@ -65,7 +66,10 @@ class Utilidades
         //Función
         while(true)
         {
-             System.out.println("\nElige un numero del menú para elegir una muerte o dejarla al Azar entre una de las disponibles en la lista de muerte Secreta jiji");
+            Utilidades.bannerInicio();
+            System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
+
+            System.out.println("\nElige un numero del menú para elegir una muerte o dejarla al Azar entre una de las disponibles en la lista de muerte Secreta jiji");
         System.out.print(" 1-.A la Suerte  \n 2-.Elegir yo \n 3-.Confidencial \n 0-.Salir (Me arrepentí)\nSelecciona una opción: ");
 
         op=sc.nextInt();
@@ -85,7 +89,7 @@ class Utilidades
     public static String selector(int el)
     {
         try {
-            FileReader file = new FileReader("MataVise.txt");
+            FileReader file = new FileReader("files/MataVise.txt");
             BufferedReader lect = new BufferedReader(file);
             String causa="";
             for (int i=0; i<el; i++)
@@ -114,7 +118,10 @@ class Utilidades
             respuesta=sc.nextLine();
             respuesta=respuesta.toLowerCase();
             if(respuesta.equals("menu"))
+            {
+                cls();
                 break;
+            }
         }
     }
 
@@ -132,6 +139,7 @@ class Utilidades
             if(eleccionMuerte==0)
             {
                 System.out.println("\n0. Vise Vive ~ Imposible ");
+                cls();
                 break;
             } 
 
@@ -196,6 +204,14 @@ class Utilidades
         {
             System.out.println("Los datos introducidos son erróneos.");    
         }
+    }
+
+    //CLEAR SCREEN
+    //Método que borra la pantalla
+    public static void cls()
+    {
+        System.out.print("\033[H\033[2J");  
+        System.out.flush(); 
     }
 
     //BANNER INICIO
