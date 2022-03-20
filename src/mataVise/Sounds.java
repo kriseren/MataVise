@@ -7,7 +7,7 @@ import javazoom.jl.player.Player;
 
 //BACKGOUND MUSIC
 //Clase que controla la reproducción de la banda sonora.
-class Bgm extends Thread
+class Bgm extends Thread 
 {
    @Override
    public void run()
@@ -17,6 +17,7 @@ class Bgm extends Thread
          while (true)
          {
             Player apl = new Player(new FileInputStream("sounds/SoundTrack.mp3"));
+            //apl.setVolume(.5);
             apl.play();
             Thread.sleep(0);
          }
@@ -67,7 +68,7 @@ class Testimonio extends Thread
    {
       try
       {
-         Player apl = new Player(new FileInputStream("sounds/coin.mp3"));
+         Player apl = new Player(new FileInputStream("sounds/Testimonio.mp3"));
          apl.play();
       }
       catch(FileNotFoundException e)
