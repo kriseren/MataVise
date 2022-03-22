@@ -381,9 +381,8 @@
 381. Le robas la novia a tu amigo y como buen cabron mueres solo (era una tóxica y te dejó a la semana) y sin amigos por tonto ~ Lo que te mereces 
 382. Un caballero lobo te pide que lo mates por su sufrimiento debido a una maldición y acaba partiendote la boca 72 veces a pesar de estar medio muerto , al final traes a su perro y los obligas a matarse entre ellos ~ Artorias Derp
 383. Le pones un booleando isHappy() a tu vida , da false y acabas matandote por la depresión que te dio ~ Booleano me la agarras con la mano
-384. 
-
-
+384. Usas maven para documentar y exportar tu programa pero se te cuela una letra y acabas haciendote a ti mismo un jar y vives compilado y comprimido porque nadie te quiere usar parguela ~ Maven
+385. Llega la primavera y tienes una seria alergía al polen acabas hinchado como un pez globo , te atropella un coche y rebotas , un lado positivo pero mueres por la falta de oxigeno al tener la laringe tan inflamada ~ Realismo! A veces...
 
 
 
