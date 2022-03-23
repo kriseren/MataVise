@@ -393,7 +393,7 @@
 393. Estás en el hospital por una operación de alargamiento de pito y el sedador se pasa de cantidad y te deja en coma, a los años te despiertas muy débil y al final te das cuenta que estás 40 años en el futuro y ahora tienes un pito robot y eres un personaje de Futurama ~ Sos Bender?
 394. Vas con tu coche por una carretera de montaña a las 4 am , derrapas un poco de broma así unas curvas y de pronto una legión de corredores callejeros te empieza a perseguir en una carrera tu eres más rápido pero como te pones más nervioso que un mono con 3 rayas de coca y 4 cafés acabas precipitandote por un acantilado y apareces en Brazil donde te comen unos monos los ojos y las tripas lentamente ~ Monos sádicos ? 
 395. Consigues escapar de Latam huyendo en barco pero acabas en la isla del Fortnite donde te roban y te matan todos los días, vives con miedo y reapareces cada dia partida que juega la gente , ahora no puedes escapar y eres tan feo que hacen memes con tu cara los niños de 12 que aún juegan al juego ~ No debiste salir de Latam
-
+396. A tu madre se le olvidó poner el try-catch cuando dió a luz y te dió error de compilación ~ LifeNotFoundException
 
 
 
