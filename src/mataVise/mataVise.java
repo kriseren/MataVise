@@ -18,7 +18,7 @@ public class mataVise
         Utilidades.cls();
 
         //Reproducción de la banda sonora.
-        if(Utilidades.lectConf("set_music_on(true);"))
+        if(Utilidades.lectConf("set_on_music(true);"))
         {
             Bgm m = new Bgm();
             m.start();
