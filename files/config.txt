@@ -5,6 +5,6 @@
 # Si no sabes lo que estás haciendo, mejor no toques nada...
 # Disfruta del juego :)
 ----------------------------------------------
-set_on_music(false);
+set_on_music(true);
 set_on_admin(false);
 ----------------------------------------------
