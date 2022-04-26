@@ -18,8 +18,12 @@ public class mataVise
         Utilidades.cls();
 
         //Reproducción de la banda sonora.
-        Bgm m = new Bgm();
-        m.start();
+        if(Utilidades.lectConf("set_music_on(true);"))
+        {
+            Bgm m = new Bgm();
+            m.start();
+        }
+        
 
         //Llamada al menú.
         Utilidades.menu();
@@ -89,7 +93,7 @@ class Utilidades
     public static String selector(int el)
     {
         try {
-            FileReader file = new FileReader("files/MataVise.txt");
+            FileReader file = new FileReader("files/.MataVise.txt");
             BufferedReader lect = new BufferedReader(file);
             String causa="";
             for (int i=0; i<el; i++)
@@ -206,8 +210,31 @@ class Utilidades
         }
     }
 
+    //LECTOR DE CONFIGURACIÓN
+    //Método que lee el archivo de configuración y comprueba si una característica está activa.
+    public static boolean lectConf(String s)
+    {
+        String line;
+        File f = new File("files/config.txt");
+        try(FileReader fr = new FileReader(f);
+            BufferedReader lect = new BufferedReader(fr);)
+        {
+            while((line=lect.readLine())!=null)
+            {
+                if(line.equals(s))
+                    return true;
+            }
+            return false;
+        }
+        catch(IOException e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
     //CLEAR SCREEN
-    //Método que borra la pantalla
+    //Método que borra la pantalla.
     public static void cls()
     {
         System.out.print("\033[H\033[2J");  
