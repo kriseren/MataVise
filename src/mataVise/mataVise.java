@@ -99,7 +99,7 @@ class Utilidades
     public static String selector(int el)
     {
         try {
-            FileReader file = new FileReader("files/.MataVise.txt");
+            FileReader file = new FileReader("files/MataVise.txt");
             BufferedReader lect = new BufferedReader(file);
             String causa="";
             for (int i=0; i<el; i++)
