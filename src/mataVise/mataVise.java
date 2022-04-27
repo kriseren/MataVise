@@ -137,7 +137,7 @@ class Utilidades
 
     //USUARIO
     //Método que lee líneas introducidas por el usuario para mostrar muertes de Vise.
-    public static void usuario() throws FileNotFoundException,JavaLayerException
+    public static void usuario() throws JavaLayerException
     {
         int i=0;
         while(true)
