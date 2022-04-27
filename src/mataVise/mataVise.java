@@ -1,6 +1,8 @@
 //Programa creado por el Vise con ayuda de Esco y Diego. 
 package mataVise;
 
+import javazoom.jl.decoder.JavaLayerException;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -11,7 +13,8 @@ import java.util.Scanner;
 public class mataVise
 {
     //MAIN
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JavaLayerException
+    {
         Utilidades.bannerInicio();
         System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
         Utilidades.AreYouSure();
@@ -76,24 +79,14 @@ class Utilidades
         System.out.print(" 1-.A la Suerte  \n 2-.Elegir yo \n 3-.Confidencial \n 0-.Salir (Me arrepentí)\nSelecciona una opción: ");
 
         op=sc.nextInt();
-            switch (op) {
-                case 1 -> {
-                    System.out.println("\nIniciando Modo Aleatorio...");
-                    aleatorio();
-                }
-                case 2 -> {
-                    System.out.println("\nIniciando Modo Usuario...");
-                    usuario();
-                }
-                case 3 -> {
-                    System.out.println("\nEntrando al modo Confidencial...");
-                    confidencial();
-                }
-                case 0 -> {
-                    System.out.println("\nSaliendo del programa...");
-                    System.exit(0);
-                }
-                default -> System.out.println("\nIntroduce un número valido porfa.");
+        switch(op)
+            {
+                case 1:System.out.println("\nIniciando Modo Aleatorio...");aleatorio();break;
+                case 2:System.out.println("\nIniciando Modo Usuario...");usuario();break;
+                case 3:System.out.println("\nEntrando al modo Confidencial...");confidencial();break;
+                case 0:System.out.println("\nSaliendo del programa...");
+                    System.exit(0);break;
+                default:System.out.println("\nIntroduce un número valido porfa.");
             }
         }
     }
