@@ -23,6 +23,12 @@ public class mataVise
             Bgm m = new Bgm();
             m.start();
         }
+
+        //Inicio del modo desarrollador.
+        if(Utilidades.lectConf("set_on_admin(true);"))
+        {
+            System.out.println("[MODO DESARROLLADOR ACTIVADO]");
+        }
         
 
         //Llamada al menú.
