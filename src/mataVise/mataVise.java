@@ -1,17 +1,17 @@
 //Programa creado por el Vise con ayuda de Esco y Diego. 
 package mataVise;
-import java.util.*;
-import java.io.*;
-import java.io.FileNotFoundException;
-import javazoom.jl.decoder.JavaLayerException;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 
 public class mataVise
 {
     //MAIN
-    public static void main(String[] args) throws FileNotFoundException,JavaLayerException
-    {
-        Scanner sc= new Scanner(System.in);
+    public static void main(String[] args) {
         Utilidades.bannerInicio();
         System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
         Utilidades.AreYouSure();
@@ -40,19 +40,14 @@ public class mataVise
 class Utilidades
 {
     public static final int ID=45821;
-    private static int eleccion;
-    private static int eleccionMuerte;
-    private static int menu;
-    private static String muerte;
     private static String respuesta;
-    private static Scanner sc = new Scanner(System.in);
-    private static int n=720;
+    private static final Scanner sc = new Scanner(System.in);
 
     //ARE YOU SURE
     //Método que pregunta al usuario antes de comenzar el programa.
-    public static boolean AreYouSure()
+    public static void AreYouSure()
     {
-        for(int i=0; i<720; n++)
+        while(true)
         {
             System.out.println("¿Estás seguro de matar al Vise?"); 
             respuesta = sc.nextLine();
@@ -62,16 +57,14 @@ class Utilidades
             else
                 System.out.println("Que gay , dilo enserio");
         }
-        return true;
     }
 
     //MENU
     //Método que muestra el menú principal.
-    public static void menu() throws FileNotFoundException,JavaLayerException
-    {
+    public static void menu() {
 
         //Definición de variables
-        int op=0;
+        int op;
 
         //Función
         while(true)
@@ -83,13 +76,24 @@ class Utilidades
         System.out.print(" 1-.A la Suerte  \n 2-.Elegir yo \n 3-.Confidencial \n 0-.Salir (Me arrepentí)\nSelecciona una opción: ");
 
         op=sc.nextInt();
-        switch(op)
-            {
-                case 1:System.out.println("\nIniciando Modo Aleatorio...");aleatorio();break;
-                case 2:System.out.println("\nIniciando Modo Usuario...");usuario();break;
-                case 3:System.out.println("\nEntrando al modo Confidencial...");confidencial();break;
-                case 0:System.out.println("\nSaliendo del programa...");;System.exit(0);break;
-                default:System.out.println("\nIntroduce un número valido porfa.");
+            switch (op) {
+                case 1 -> {
+                    System.out.println("\nIniciando Modo Aleatorio...");
+                    aleatorio();
+                }
+                case 2 -> {
+                    System.out.println("\nIniciando Modo Usuario...");
+                    usuario();
+                }
+                case 3 -> {
+                    System.out.println("\nEntrando al modo Confidencial...");
+                    confidencial();
+                }
+                case 0 -> {
+                    System.out.println("\nSaliendo del programa...");
+                    System.exit(0);
+                }
+                default -> System.out.println("\nIntroduce un número valido porfa.");
             }
         }
     }
@@ -117,9 +121,10 @@ class Utilidades
         sc.nextLine();
         while(true)
         {
+            int eleccion;
             do
             {
-                eleccion=1+(int)(Math.random()*1000);
+                eleccion =1+(int)(Math.random()*1000);
             }
             while(selector(eleccion).equals(""));
                 
@@ -137,16 +142,15 @@ class Utilidades
 
     //USUARIO
     //Método que lee líneas introducidas por el usuario para mostrar muertes de Vise.
-    public static void usuario() throws JavaLayerException
-    {
+    public static void usuario() {
         int i=0;
         while(true)
         {
             System.out.print("\nElige un numero del 1 al 1000, para volver al menú pulsa 0 --> ");
-            eleccionMuerte = sc.nextInt();
+            int eleccionMuerte = sc.nextInt();
 
             //Si el número introducido es 0, sale del modo usuario.
-            if(eleccionMuerte==0)
+            if(eleccionMuerte ==0)
             {
                 System.out.println("\n0. Vise Vive ~ Imposible ");
                 cls();
@@ -154,7 +158,7 @@ class Utilidades
             } 
 
             //Si el número introducido es el ID del Vise se entra al EasterEgg.
-            if (eleccionMuerte==ID)
+            if (eleccionMuerte ==ID)
             {
                 //Reproduce sonido de coin
                 CoinSound c = new CoinSound();
@@ -166,14 +170,14 @@ class Utilidades
             }
 
             //Si el número introducido es el código de crímenes muestra la lista de crímenes del EasterEgg.
-            if(eleccionMuerte==7524324)
+            if(eleccionMuerte ==7524324)
             {
                 egg.list();
                 break;
             }
 
             //Si el número introducido es el código de últimas palabras reproduce el audio del testimonio de Vise.
-            if(eleccionMuerte==8534096)
+            if(eleccionMuerte ==8534096)
             {
                 System.out.println("\nAntes de morir, el delegado Vise grabó una pequeña nota de voz. Estas son sus últimas palabras...");
 
@@ -223,7 +227,7 @@ class Utilidades
         String line;
         File f = new File("files/config.txt");
         try(FileReader fr = new FileReader(f);
-            BufferedReader lect = new BufferedReader(fr);)
+            BufferedReader lect = new BufferedReader(fr))
         {
             while((line=lect.readLine())!=null)
             {
