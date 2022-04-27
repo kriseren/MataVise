@@ -70,7 +70,7 @@ class egg
     {
         try
         {
-            FileReader file = new FileReader("files/.CrimenVise.txt");
+            FileReader file = new FileReader("files/CrimenVise.txt");
             BufferedReader lect = new BufferedReader(file);
             String causa="";
             for (int i=0; i<el; i++)
