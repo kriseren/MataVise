@@ -1,15 +1,16 @@
 //Easter Egg del programa de MataVise.
 //Programa creado por el Vise con ayuda de Esco y Diego. 
 package mataVise;
-import java.util.*;
-import java.io.*;
-import javazoom.jl.decoder.JavaLayerException;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 
 class egg 
 {
-    private static String respuesta;
-    private static Scanner sc = new Scanner(System.in);
+	private static final Scanner sc = new Scanner(System.in);
 
 	//Método que imprime por pantalla la ficha técnica de Vise.
 	public static void start()
@@ -55,8 +56,8 @@ class egg
 				break;
 			System.out.println(selector(i));
             System.out.println("\nPulsa \"Intro\" para ver más o escribe \"Salir\" para volver al menú.");
-            respuesta=sc.nextLine();
-            respuesta=respuesta.toLowerCase();
+			String respuesta = sc.nextLine();
+            respuesta = respuesta.toLowerCase();
             if(respuesta.equals("salir"))
                 break;
             i++;

@@ -13,8 +13,7 @@ import java.util.Scanner;
 public class mataVise
 {
     //MAIN
-    public static void main(String[] args) throws JavaLayerException
-    {
+    public static void main(String[] args) {
         Utilidades.bannerInicio();
         System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
         Utilidades.AreYouSure();

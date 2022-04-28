@@ -49,11 +49,7 @@ class CoinSound extends Thread
          Player apl = new Player(new FileInputStream("sounds/coin.mp3"));
          apl.play();
       }
-      catch(FileNotFoundException e)
-      {
-         System.out.println("Bug");
-      }
-      catch(JavaLayerException e)
+      catch(FileNotFoundException | JavaLayerException e)
       {
          System.out.println("Bug");
       }
@@ -71,11 +67,7 @@ class Testimonio extends Thread
          Player apl = new Player(new FileInputStream("sounds/Testimonio.mp3"));
          apl.play();
       }
-      catch(FileNotFoundException e)
-      {
-         System.out.println("Bug");
-      }
-      catch(JavaLayerException e)
+      catch(FileNotFoundException | JavaLayerException e)
       {
          System.out.println("Bug");
       }

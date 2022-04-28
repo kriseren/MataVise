@@ -1,7 +1,7 @@
 ----------------------------------------------
 --   ARCHIVO DE CONFIGURACIÓN DE MATAVISE   --
 ----------------------------------------------
-# Para modificar los atributos de la configuración, tan solo has de cambiar el parámetro de "true" a "false" y viceversa.
+# Para modificar los atributos de la configuración, tan solo has de cambiar el parámetro de true a false y viceversa.
 # Si no sabes lo que estás haciendo, mejor no toques nada...
 # Disfruta del juego :)
 ----------------------------------------------
