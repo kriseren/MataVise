@@ -37,7 +37,7 @@ then #Si el usuario dice que sí, se muestra un mensaje de selección de la carp
               Exec=$directorio/mataVise.sh
               Icon=$directorio/files/knife.png
               Terminal=false
-              Type=Application">/home/$USER/Escritorio/MataVise.desktop; sleep 1
+              Type=Application">/home/$USER/Desktop/MataVise.desktop; sleep 1
         echo "50"
         echo "# Paso 4"; sleep 1
         echo "70"
