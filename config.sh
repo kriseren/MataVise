@@ -1,4 +1,4 @@
-                                                                             
+#!/bin/bash
       #_____           _____  _____   ______         _____   ____       _____    
   #___|\    \     ____|\    \|\    \ |\     \   ____|\    \ |    |  ___|\    \   
  #/    /\    \   /     /\    \\\    \| \     \ |    | \    \|    | /    /\    \  
@@ -13,7 +13,6 @@
     #'   )/          '    '        '       '     '             '      '   )/     
         #'                                                                '       
 #Por Diego Calatayud
-#!/bin/bash 
 #Definición de variable programa
 opcion=$(zenity --list \
                     --title="MATAVISE CONFIG SCRIPT" \

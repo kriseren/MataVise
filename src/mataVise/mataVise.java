@@ -3,19 +3,22 @@ package mataVise;
 
 import javazoom.jl.decoder.JavaLayerException;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 
 public class mataVise
 {
     //MAIN
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JavaLayerException
+    {
         Utilidades.bannerInicio();
         System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
         Utilidades.AreYouSure();
         Utilidades.cls();
-        Utilidades.lectRutaConf();
 
         //Reproducción de la banda sonora.
         if(Utilidades.lectConf("set_on_music(true);"))
@@ -29,7 +32,7 @@ public class mataVise
         {
             System.out.println("[MODO DESARROLLADOR ACTIVADO]");
         }
-        
+
 
         //Llamada al menú.
         Utilidades.menu();
@@ -49,7 +52,7 @@ class Utilidades
     {
         while(true)
         {
-            System.out.println("¿Estás seguro de matar al Vise?"); 
+            System.out.println("¿Estás seguro de matar al Vise?");
             respuesta = sc.nextLine();
             respuesta=respuesta.toLowerCase(); //Se puede escribir Si , si , SI , sI
             if(respuesta.equals("si"))
@@ -73,10 +76,10 @@ class Utilidades
             System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
 
             System.out.println("\nElige un numero del menú para elegir una muerte o dejarla al Azar entre una de las disponibles en la lista de muerte Secreta jiji");
-        System.out.print(" 1-.A la Suerte  \n 2-.Elegir yo \n 3-.Confidencial \n 0-.Salir (Me arrepentí)\nSelecciona una opción: ");
+            System.out.print(" 1-.A la Suerte  \n 2-.Elegir yo \n 3-.Confidencial \n 0-.Salir (Me arrepentí)\nSelecciona una opción: ");
 
-        op=sc.nextInt();
-        switch(op)
+            op=sc.nextInt();
+            switch(op)
             {
                 case 1:System.out.println("\nIniciando Modo Aleatorio...");aleatorio();break;
                 case 2:System.out.println("\nIniciando Modo Usuario...");usuario();break;
@@ -93,7 +96,7 @@ class Utilidades
     public static String selector(int el)
     {
         try {
-            FileReader file = new FileReader("../files/MataVise.txt");
+            FileReader file = new FileReader("files/MataVise.txt");
             BufferedReader lect = new BufferedReader(file);
             String causa="";
             for (int i=0; i<el; i++)
@@ -105,7 +108,7 @@ class Utilidades
     }
 
     //ALEATORIO
-    //Método que genera números de línea aleatorios para extraer muertes de Vise.
+    //Método que genera un ńúmeros de línea aleatorios para extraer muertes de Vise.
     public static void aleatorio()
     {
         sc.nextLine();
@@ -117,7 +120,7 @@ class Utilidades
                 eleccion =1+(int)(Math.random()*1000);
             }
             while(selector(eleccion).equals(""));
-                
+
             System.out.println(selector(eleccion));
             System.out.println("\nPulsa \"Intro\" para ver más o escribe \"menu\" para volver al menú.");
             respuesta=sc.nextLine();
@@ -145,7 +148,7 @@ class Utilidades
                 System.out.println("\n0. Vise Vive ~ Imposible ");
                 cls();
                 break;
-            } 
+            }
 
             //Si el número introducido es el ID del Vise se entra al EasterEgg.
             if (eleccionMuerte ==ID)
@@ -180,7 +183,7 @@ class Utilidades
             System.out.println(selector(eleccionMuerte));
             i++;
 
-            //Si el contador de muertes seguidas es mayor a 25, se ejecuta lo siguiente. 
+            //Si el contador de muertes seguidas es mayor a 25, se ejecuta lo siguiente.
             if(i==10)
                 System.out.println("\nPor favor, deja a Vise morir en paz.");
             if(i==25)
@@ -190,7 +193,7 @@ class Utilidades
                 System.out.println("\n!Has entrado al mozo Pacifista!\nDebido a que has matado a Vise más de 72 veces seguidas, esta vez Vise vivirá.");
                 break;
             }
-        }  
+        }
     }
 
     //CONFIDENCIAL
@@ -206,27 +209,16 @@ class Utilidades
         }
         else
         {
-            System.out.println("Los datos introducidos son erróneos.");    
+            System.out.println("Los datos introducidos son erróneos.");
         }
     }
 
     //LECTOR DE CONFIGURACIÓN
-    //Método que lee el archivo que contiene la ruta del archivo de configuración.
-    public static String lectRutaConf()
-    {
-        try (DataInputStream dis = new DataInputStream(new FileInputStream(".ruta.dat")))
-        {
-            return dis.readUTF();
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-            return "Error leyendo la ruta del archivo de configuración.";
-        }
-    }
     //Método que lee el archivo de configuración y comprueba si una característica está activa.
     public static boolean lectConf(String s)
     {
         String line;
-        File f = new File(lectRutaConf()+"files/config.txt");
+        File f = new File("files/config.txt");
         try(FileReader fr = new FileReader(f);
             BufferedReader lect = new BufferedReader(fr))
         {
@@ -248,8 +240,8 @@ class Utilidades
     //Método que borra la pantalla.
     public static void cls()
     {
-        System.out.print("\033[H\033[2J");  
-        System.out.flush(); 
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 
     //BANNER INICIO

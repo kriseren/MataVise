@@ -28,7 +28,7 @@ then #Si el usuario dice que sí, se muestra un mensaje de selección de la carp
         (
         sleep 1
         echo "10"
-        echo "# Aplicando permisos..."; chmod +x *;sleep 1
+        echo "# Aplicando permisos..."; chmod +x *.sh;sleep 1
         echo "20"
         echo "# Generando estructura de archivos...";
               mkdir $directorio/mataVise; #Genera el directorio mataVise en la ruta de instalación.
