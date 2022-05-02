@@ -3,10 +3,7 @@ package mataVise;
 
 import javazoom.jl.decoder.JavaLayerException;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 
@@ -18,6 +15,7 @@ public class mataVise
         System.out.println("Bienvenido al programa de eliminación del sujeto Vicedo con ID #"+Utilidades.ID);
         Utilidades.AreYouSure();
         Utilidades.cls();
+        Utilidades.lectRutaConf();
 
         //Reproducción de la banda sonora.
         if(Utilidades.lectConf("set_on_music(true);"))
@@ -95,7 +93,7 @@ class Utilidades
     public static String selector(int el)
     {
         try {
-            FileReader file = new FileReader("files/MataVise.txt");
+            FileReader file = new FileReader("../files/MataVise.txt");
             BufferedReader lect = new BufferedReader(file);
             String causa="";
             for (int i=0; i<el; i++)
@@ -107,7 +105,7 @@ class Utilidades
     }
 
     //ALEATORIO
-    //Método que genera un ńúmeros de línea aleatorios para extraer muertes de Vise.
+    //Método que genera números de línea aleatorios para extraer muertes de Vise.
     public static void aleatorio()
     {
         sc.nextLine();
@@ -213,11 +211,22 @@ class Utilidades
     }
 
     //LECTOR DE CONFIGURACIÓN
+    //Método que lee el archivo que contiene la ruta del archivo de configuración.
+    public static String lectRutaConf()
+    {
+        try (DataInputStream dis = new DataInputStream(new FileInputStream(".ruta.dat")))
+        {
+            return dis.readUTF();
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+            return "Error leyendo la ruta del archivo de configuración.";
+        }
+    }
     //Método que lee el archivo de configuración y comprueba si una característica está activa.
     public static boolean lectConf(String s)
     {
         String line;
-        File f = new File("files/config.txt");
+        File f = new File(lectRutaConf()+"files/config.txt");
         try(FileReader fr = new FileReader(f);
             BufferedReader lect = new BufferedReader(fr))
         {
