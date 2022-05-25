@@ -493,7 +493,7 @@
 493. Te olvidas de hacer el docker stop al final de la clase y el pc explota matando el mongo de la tarde. Acabas en la cárcel y dentro te matan por ser un sucio programador de java y no usar Python por parguelita ~ Python rules
 494. Intentas hacer el ruido que hace una jirafa pero no lo sabes y acabas muriendo sin saber el ruido que hace una jirafa y si lo sabes... Qué ruido hace un pingolín? ~ Incognitas Animales
 495. Morir atropellado por un tren después de estar haciendo el misionero con una almohada en las vías del tren ~ Romanticismo hasta el final
-
+496. 
 
 
 
